@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div1">
+    <p>欢迎使用 wangEditor 编辑器</p>
+</div>
+<form action="" enctype='multipart/form-data' method='POST'>
+
+    标题：<input  name="title">
+    <br/>
+    内容：<textarea id="mainNav" name = "text" ></textarea>
+    <br/>
+    保存：<button type="submit" id="btn1">点击我啊</button>
+
+</form>
+
+
+
+<!--<button id="btn1">获取html</button>-->
+<!--<button id="btn2">获取text</button>-->
+
+
+<script type="text/javascript" src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#div1')
+    editor.create()
+
+    document.getElementById('btn1').addEventListener('click', function () {
+        // 读取 html
+        // alert(editor.txt.html())
+        document.getElementById('mainNav').innerText = editor.txt.html()
+    }, false)
+
+    document.getElementById('btn2').addEventListener('click', function () {
+        // 读取 text
+        alert(editor.txt.text())
+    }, false)
+
+    function ajaxForm(){
+        $.ajax({
+             type: 'GET',
+             //contentType: "application/json; charset=UTF-8",
+             url: '/write',
+             contentType: 'application/json; charset=UTF-8',
+              data:JSON.stringify({
+                  'n1': $('input[id=mainNav]').val()
+
+              }),
+            error: function(xhr, err){
+            alert('请求失败，原因可能是：' + err + '！')
+        },
+        success: function(data, textStatus){
+        $('#max').text(data.max);
+        $('#min').text(data.min);
+        }
+        });
+      return false
+
+    }
+
+</script>
+
+</body>
+</html>
+

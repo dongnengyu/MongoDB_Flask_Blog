@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/clean-blog.css" rel="stylesheet">
+<style type="text/css">
+
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  max-width: 100%;
+  padding: 0.8em 0em;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-family: 'PT Sans', sans-serif;
+}
+pre,
+code {
+  font-family: 'Inconsolata', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+}
+html {
+  background-color: #fdf6e3;
+  color: #657b83;
+  margin: 1em;
+}
+body {
+  background-color: #fdf6e3;color: #657b83;
+  margin: 0 auto;
+  max-width: 23cm;
+  padding: 1em;
+}
+
+code {
+  background-color: #eee8d5;
+  padding: 2px;
+}
+a {
+  color: #b58900;
+}
+a:visited {
+  color: #cb4b16;
+}
+a:hover {
+  color: #cb4b16;
+}
+h1 {
+  color: #d33682;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #859900;
+}
+pre {
+  background-color: #fdf6e3;
+  color: #657b83;
+  border: 1pt solid #93a1a1;
+  padding: 1em;
+  box-shadow: 5pt 5pt 8pt #eee8d5;
+}
+pre code {
+  background-color: #fdf6e3;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.4em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h5 {
+  font-size: 1.15em;
+}
+h6 {
+  font-size: 1.15em;
+}
+
+table {
+
+  overflow: auto;
+  box-shadow: 5pt 5pt 8pt #eee8d5;
+}
+
+table th {
+  font-weight: bold;
+  background:#EEE8D6;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #C7CAC1;
+}
+
+table tr {
+  border-top: 1px solid #C7CAC1;
+}
+
+table tr:nth-child(2n) {
+}
+table td{ word-wrap: break-word !important; word-break: break-all !important; }
+
+.tag {
+  background-color: #eee8d5;
+  color: #d33682;
+  padding: 0 0.2em;
+}
+.todo,
+.next,
+.done {
+  color: #fdf6e3;
+  background-color: #dc322f;
+  padding: 0 0.2em;
+}
+.tag {
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  border-radius: 0.35em;
+}
+.TODO {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #2aa198;
+}
+.NEXT {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.ACTIVE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.DONE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
+.WAITING {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #cb4b16;
+}
+.HOLD {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.NOTE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.CANCELLED {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
+
+@media (max-width: 540px) {
+  html{margin: 0 auto; padding: 4px;}
+}
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.hljs-type,
+.hljs-link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
+
+
+</style>
+
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="post">Sample Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url({{title}})">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Clean Blog</h1>
+              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<h1>Markdown 语法和 MWeb 写作使用说明</h1>
+
+<h2>Markdown 的设计哲学</h2>
+
+<blockquote>
+  <p>Markdown 的目標是實現「易讀易寫」。
+  不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。
+  Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
+</blockquote>
+
+<!-- more -->
+
+<h2>本文约定</h2>
+
+<p>如果有写 <code>效果如下：</code>， 在 MWeb 编辑状态下只有用 <code>CMD + 4</code> 或 <code>CMD + R</code> 预览才可以看效果。</p>
+
+<h2>标题</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code># 第一级标题 `&lt;h1&gt;` 
+## 第二级标题 `&lt;h2&gt;` 
+###### 第六级标题 `&lt;h6&gt;` 
+</code></pre>
+
+<p>效果如下：</p>
+
+<h1>第一级标题 <code>&lt;h1&gt;</code></h1>
+
+<h2>第二级标题 <code>&lt;h2&gt;</code></h2>
+
+<h6>第六级标题 <code>&lt;h6&gt;</code></h6>
+
+<h2>强调</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>*这些文字会生成`&lt;em&gt;`*
+_这些文字会生成`&lt;u&gt;`_
+
+**这些文字会生成`&lt;strong&gt;`**
+__这些文字会生成`&lt;strong&gt;`__
+</code></pre>
+
+<p>在 MWeb 中的快捷键为： <code>CMD + U</code>、<code>CMD + I</code>、<code>CMD + B</code>
+效果如下：</p>
+
+<p><em>这些文字会生成<code>&lt;em&gt;</code></em>
+_这些文字会生成<code>&lt;u&gt;</code>_</p>
+
+<p><strong>这些文字会生成<code>&lt;strong&gt;</code></strong>
+__这些文字会生成<code>&lt;strong&gt;</code>__</p>
+
+<h2>换行</h2>
+
+<p>四个及以上空格加回车。
+如果不想打这么多空格，只要回车就为换行，请勾选：<code>Preferences</code> - <code>Themes</code> - <code>Translate newlines to &lt;br&gt; tags</code></p>
+
+<h2>列表</h2>
+
+<h3>无序列表</h3>
+
+<p>Markdown 语法：</p>
+
+<pre><code>* 项目一 无序列表 `* + 空格键`
+* 项目二
+    * 项目二的子项目一 无序列表 `TAB + * + 空格键`
+    * 项目二的子项目二
+</code></pre>
+
+<p>在 MWeb 中的快捷键为： <code>Option + U</code>
+效果如下：</p>
+
+<ul>
+<li>项目一 无序列表 <code>* + 空格键</code></li>
+<li>项目二
+<ul>
+<li>项目二的子项目一 无序列表 <code>TAB + * + 空格键</code></li>
+<li>项目二的子项目二</li>
+</ul></li>
+</ul>
+
+<h3>有序列表</h3>
+
+<p>Markdown 语法：</p>
+
+<pre><code>1. 项目一 有序列表 `数字 + . + 空格键`
+2. 项目二 
+3. 项目三
+    1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`
+    2. 项目三的子项目二
+</code></pre>
+
+<p>效果如下：</p>
+
+<ol>
+<li>项目一 有序列表 <code>数字 + . + 空格键</code></li>
+<li>项目二 </li>
+<li>项目三
+<ol>
+<li>项目三的子项目一 有序列表 <code>TAB + 数字 + . + 空格键</code></li>
+<li>项目三的子项目二</li>
+</ol></li>
+</ol>
+
+<h3>列表中嵌入代码块语法</h3>
+
+<pre><code>1. 项目一 有序列表 `数字 + . + 空格键`
+
+    列表中嵌入代码块必须前后空一行，如这个写法
+
+    ```js
+    function fancyAlert(arg) {
+      if(arg) {
+        $.facebox({div:'#foo'})
+      }
+    }
+    ```
+
+    其他文本。
+
+2. 项目二
+</code></pre>
+
+<h3>任务列表（Task lists）</h3>
+
+<p>Markdown 语法：</p>
+
+<pre><code>- [ ] 任务一 未做任务 `- + 空格 + [ ]`
+- [x] 任务二 已做任务 `- + 空格 + [x]`
+</code></pre>
+
+<p>效果如下：</p>
+
+<ul>
+<li>[ ] 任务一 未做任务 <code>- + 空格 + [ ]</code></li>
+<li>[x] 任务二 已做任务 <code>- + 空格 + [x]</code></li>
+</ul>
+
+<h2>图片</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)
+格式: ![Alt Text](url)
+</code></pre>
+
+<p><code>Control + Shift + I</code> 可插入Markdown语法。
+如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code>CMD + V</code> 粘贴、<code>CMD + Option + I</code> 导入这三种方式来增加图片。
+效果如下：</p>
+
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up" /></p>
+
+<p>MWeb 引入的特别的语法来设置图片宽度，方法是在图片描述后加 <code>-w + 图片宽度</code> 即可，比如说要设置上面的图片的宽度为 140，语法如为 <code>![GitHub-w140](set-up-git.gif)</code>：</p>
+
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up-w140" /></p>
+
+<h2>链接</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>email &lt;example@example.com&gt;
+[GitHub](http://github.com)
+自动生成连接  &lt;http://www.github.com/&gt;
+</code></pre>
+
+<p><code>Control + Shift + L</code> 可插入Markdown语法。
+如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。
+效果如下：</p>
+
+<p>Email 连接： <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;:&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#64;&#x65;x&#x61;&#109;&#112;le.&#99;&#111;&#109;">&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#64;&#x65;x&#x61;&#109;&#112;le.&#99;&#111;&#109;</a>
+<a href="http://github.com">连接标题Github网站</a>
+自动生成连接像： <a href="http://www.github.com/">http://www.github.com/</a> 这样</p>
+
+<h2>区块引用</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>某某说:
+&gt; 第一行引用
+&gt; 第二行费用文字
+</code></pre>
+
+<p><code>CMD + Shift + B</code> 可插入Markdown语法。
+效果如下：</p>
+
+<p>某某说:</p>
+
+<blockquote>
+  <p>第一行引用
+  第二行费用文字</p>
+</blockquote>
+
+<h2>行内代码</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>像这样即可：`&lt;addr&gt;` `code`
+</code></pre>
+
+<p><code>CMD + K</code> 可插入Markdown语法。
+效果如下：</p>
+
+<p>像这样即可：<code>&lt;addr&gt;</code> <code>code</code></p>
+
+<h2>多行或者一段代码</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>```js
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+
+}
+```
+</code></pre>
+
+<p><code>CMD + Shift + K</code> 可插入Markdown语法。
+效果如下：</p>
+
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span> <span class="nx">fancyAlert</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">facebox</span><span class="p">({</span><span class="nx">div</span><span class="o">:</span><span class="s1">&#39;#foo&#39;</span><span class="p">})</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+<h2>顺序图或流程图</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>```sequence
+张三-&gt;李四: 嘿，小四儿, 写博客了没?
+Note right of 李四: 李四愣了一下，说：
+李四--&gt;张三: 忙得吐血，哪有时间写。
+```
+
+```flow
+st=&gt;start: 开始
+e=&gt;end: 结束
+op=&gt;operation: 我的操作
+cond=&gt;condition: 确认？
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+```
+</code></pre>
+
+<p>效果如下（ <code>Preferences</code> - <code>Themes</code> - <code>Enable sequence &amp; flow chart</code> 才会看到效果 ）：</p>
+
+<pre><code>张三-&gt;李四: 嘿，小四儿, 写博客了没?
+Note right of 李四: 李四愣了一下，说：
+李四--&gt;张三: 忙得吐血，哪有时间写。
+</code></pre>
+
+<pre><code>st=&gt;start: 开始
+e=&gt;end: 结束
+op=&gt;operation: 我的操作
+cond=&gt;condition: 确认？
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+</code></pre>
+
+<p>更多请参考：<a href="http://bramp.github.io/js-sequence-diagrams/">http://bramp.github.io/js-sequence-diagrams/</a>, <a href="http://adrai.github.io/flowchart.js/">http://adrai.github.io/flowchart.js/</a></p>
+
+<h2>表格</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>第一格表头 | 第二格表头
+--------- | -------------
+内容单元格 第一列第一格 | 内容单元格第二列第一格
+内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格
+</code></pre>
+
+<p>效果如下：</p>
+
+<p>第一格表头 | 第二格表头
+--------- | -------------
+内容单元格 第一列第一格 | 内容单元格第二列第一格
+内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格</p>
+
+<h2>删除线</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>加删除线像这样用： ~~删除这些~~
+</code></pre>
+
+<p>效果如下：</p>
+
+<p>加删除线像这样用： ~~删除这些~~</p>
+
+<h2>分隔线</h2>
+
+<p>以下三种方式都可以生成分隔线：</p>
+
+<pre><code>***
+
+*****
+
+- - -
+</code></pre>
+
+<p>效果如下：</p>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<h2>MathJax</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>块级公式：
+$$  x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+\\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \\]
+
+行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+</code></pre>
+
+<p>效果如下（<code>Preferences</code> - <code>Themes</code> - <code>Enable MathJax</code> 才会看到效果）：</p>
+
+<p>块级公式：
+$$  x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+
+<p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
+
+<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</p>
+
+<h2>脚注（Footnote）</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>这是一个脚注：[^sample_footnote]
+</code></pre>
+
+<p>效果如下：</p>
+
+<p>这是一个脚注：<sup class="footnote-ref" id="fnref-sample_footnote"><a href="#fn-sample_footnote">1</a></sup></p>
+
+<h2>注释和阅读更多</h2>
+
+<p><!-- comment -->
+<!-- more --></p>
+
+<p>Actions->Insert Read More Comment <em>或者</em> <code>Command + .</code>
+<strong>注</strong> 阅读更多的功能只用在生成网站或博客时，插入时注意要后空一行。</p>
+
+<h2>TOC</h2>
+
+<p>Markdown 语法：</p>
+
+<pre><code>[TOC]
+</code></pre>
+
+<p>效果如下：</p>
+
+<p>[TOC]</p>
+
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn-sample_footnote">
+<p>这里是脚注信息&#160;<a href="#fnref-sample_footnote" class="footnoteBackLink" title="Jump back to footnote 1 in the text.">&#8617;</a></p>
+</li>
+</ol>
+</div>
+<hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="../static/js/clean-blog.js"></script>
+
+  </body>
+
+</html>
