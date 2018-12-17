@@ -3,38 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <style type="text/css">
+        .toolbar {
+            border: 1px solid #ccc;
+        }
+
+        .text {
+            border: 1px solid #ccc;
+            height: 800px;
+        }
+    </style>
 </head>
 <body>
 
-<div id="div1">
-    <p>欢迎使用 wangEditor 编辑器</p>
+标题：<input type="text" id='title' name="title">
+<hr/>
+<div id="div1" class="toolbar">
 </div>
-<form action="" enctype='multipart/form-data' method='POST'>
-
-    标题：<input  name="title">
-    <br/>
-    内容：<textarea id="mainNav" name = "text" ></textarea>
-    <br/>
-    保存：<button type="submit" id="btn1">点击我啊</button>
-
-</form>
+<div style="padding: 5px 0; color: #ccc">中间隔离带</div>
+<div id="div2" class="text"> <!--可使用 min-height 实现编辑区域自动增加高度-->
+    <p>请输入内容</p>
+</div>
 
 
 
-<!--<button id="btn1">获取html</button>-->
-<!--<button id="btn2">获取text</button>-->
+
+<button type="submit" id="btn1" onclick="savePassage()">保存文章</button>
 
 
 <script type="text/javascript" src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>
 <script type="text/javascript">
     var E = window.wangEditor
-    var editor = new E('#div1')
-    editor.create()
+        var editor1 = new E('#div1', '#div2')  // 两个参数也可以传入 elem 对象，class 选择器
+    editor1.create()
 
     document.getElementById('btn1').addEventListener('click', function () {
         // 读取 html
         // alert(editor.txt.html())
-        document.getElementById('mainNav').innerText = editor.txt.html()
+        // document.getElementById('mainNav').innerText = editor.txt.html()
     }, false)
 
     document.getElementById('btn2').addEventListener('click', function () {
@@ -42,25 +50,37 @@
         alert(editor.txt.text())
     }, false)
 
-    function ajaxForm(){
-        $.ajax({
-             type: 'GET',
-             //contentType: "application/json; charset=UTF-8",
-             url: '/write',
-             contentType: 'application/json; charset=UTF-8',
-              data:JSON.stringify({
-                  'n1': $('input[id=mainNav]').val()
 
-              }),
-            error: function(xhr, err){
-            alert('请求失败，原因可能是：' + err + '！')
-        },
-        success: function(data, textStatus){
-        $('#max').text(data.max);
-        $('#min').text(data.min);
-        }
+    function savePassage() {
+
+
+        var data = {
+            "content": editor1.txt.html(),
+            "title": $("input#title").val()
+        };
+        $.ajax({
+
+            type: 'POST',
+            url: '/write/save',
+            data: JSON.stringify(data),
+            contentType: 'application/json; charset=UTF-8',
+            dataType: 'json',
+            success: function (data) {
+
+                if (data['ok'] = true) {
+                    alert("保存成功")
+                }
+                else {
+                    alert("保存失败")
+                }
+
+
+            },
+            error: function (xhr, type) {
+
+            }
         });
-      return false
+
 
     }
 

@@ -10,6 +10,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
 from pymongoUtils import GFS
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -33,32 +34,9 @@ def index():
     post4 = a[3]['title']
     post5 = a[4]['title']
 
-    # print(content)
-    # print(content['title'])
-    #
-    # return render_template(
-    #     'post.html',
-    #     title=content['title'],
-    #     author="董能宇",
-    #     main_content=content['content']
-    # )
+    print(post1)
 
-    #
-    # filename = "IMG_0087.PNG"
-    # print(filename)
-    # gfs = GFS('fileDB', 'fileTable')
-    # (file_db, fileTable) = gfs.createDB()  # 创建数据库与数据表
-    #
-    # # 打印出数据库中的文件
-    # print(gfs.listFile(file_db))
-    #
-    # if filename in gfs.listFile(file_db):
-    #     print("数据库中存在该文件，将会被读取到硬盘")
-    #     query = {'filename': filename}
-    #     id = gfs.getID(file_db, query)
-    #     print(id)
-    #     (bdata, attri) = gfs.getFile(file_db, id)  # 查询并获取文件信息至内存
-    #     gfs.write_2_disk(bdata, attri)  # 写入磁盘
+    return jsonify({'ok': True})
 
     return render_template(
         'index.html',
@@ -75,11 +53,6 @@ def index():
         link5="post/" + post5,
 
     )
-    # else:
-    #     return render_template(
-    #         'index.html',
-    #
-    #     )
 
 
 @app.route('/upload', methods=['POST', 'GET'])
@@ -195,7 +168,7 @@ def download_file1(postname):
         title=content['title'],
         author="董能宇",
         main_content=content['content'],
-        post_time = str(time.year) + "-"+ str(time.month) +"-"+ str(time.day)
+        post_time=str(time.year) + "-" + str(time.month) + "-" + str(time.day)
     )
 
 
@@ -240,11 +213,43 @@ def admin11():
 
 @app.route("/write", methods=['GET', 'POST'])
 def write():
-    if request.method == 'POST':
-        content = request.form['text']
-        print(content)
+    # if request.method == 'POST':
+    #     content = request.form['content']
+    #     print(content)
+    #
+    #     title = request.form['title']
+    #
+    #     now = datetime.datetime.now()
+    #
+    #     print(now)
+    #
+    #     Client = MongoClient()
+    #     db = Client.fileDB
+    #
+    #     post = {'content': content, 'title': title, 'date': now}
+    #
+    #     posts = db.posts
+    #
+    #     post_1 = posts.insert_one(post).inserted_id
+    #
+    #     print(post_1)
 
-        title = request.form['title']
+    return render_template("write.html")
+
+
+@app.route("/write/save", methods=['GET', 'POST'])
+def savePassage():
+    if request.method == 'POST':
+        content1 = request.get_json()
+        print(content1)
+
+        print(content1['content'])
+
+        content = content1['content']
+
+        title = content1['title']
+
+        print(title)
 
         now = datetime.datetime.now()
 
@@ -261,7 +266,20 @@ def write():
 
         print(post_1)
 
+        return jsonify({'ok': True})
+
     return render_template("write.html")
+
+
+@app.route("/test", methods=["GET", "POST"])
+def test():
+    print("dd")
+    print(request.get_data())
+    data = request.get_json()
+    print(data)
+
+    return jsonify({'ok': True})
+    return render_template("test.html")
 
 
 if __name__ == "__main__":

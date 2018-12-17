@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script type="application/javascript">
+
+        function savePassage() {
+
+            alert("dl");
+            var data = {
+                "name":
+                    "test",
+                "age": 1
+            };
+            $.ajax({
+
+                type: 'POST',
+                url: '',
+                data: JSON.stringify(data),
+                contentType: 'application/json; charset=UTF-8',
+                dataType: 'json',
+                success: function (data) {
+                    alert("sc")
+                },
+                error: function (xhr, type) {
+                    alert("gg")
+                }
+            });
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+<input type="submit" value="上传" onclick="test()">
+
+</body>
+</html>
