@@ -11,8 +11,9 @@
 
 * 自适应电脑和手机平板
 
-![](readme_2.png)
-![](readme_3.png)
+<img src="/readme_2.png" width="50%"  height="50%">
+<img src="/readme_3.png" width="50%"  height="50%">
+
 
 #### To do
 
