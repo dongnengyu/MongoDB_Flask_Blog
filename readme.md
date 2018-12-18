@@ -7,4 +7,5 @@
 #### 2.项目特点
 * 利用mongodb储存文章和文件（其中文件用gridfs储存）
 
+![](readme_1.png)
 
