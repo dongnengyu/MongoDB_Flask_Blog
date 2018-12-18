@@ -1,6 +1,10 @@
 # 项目介绍
 
 #### 1.项目框架
-* 基于flask + mongodb + bootstrap4
+* 基于flask web + mongodb + bootstrap4
+
+
+#### 2.项目特点
+* 利用mongodb储存文章和文件（其中文件用gridfs储存）
 
 
