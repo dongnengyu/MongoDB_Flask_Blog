@@ -1,5 +1,6 @@
 # coding:utf-8
 import datetime
+import json
 import mimetypes
 
 import pymongo
@@ -20,6 +21,29 @@ def inde():
     return redirect('/index')
 
 
+@app.route('/index/getPassage', methods=["POST", "GET"])
+def getPassage():
+
+        index = request.get_json()['index']
+
+
+        ######从数据库中读取所有数据并用json返回到前端
+        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        db = myclient['fileDB']
+
+        a = db.posts.find({}, {'title': 1, 'content': 1, '_id': 0}).sort([("date", -1)]).skip(int(index)).limit(5)
+        d = db.posts.find().count()
+        print(d)
+
+        bb = []
+        bb.append({"index" : index})
+        bb.append({"counts" : d})
+        for i in a:
+            bb.append(i)
+        print(bb)
+        return jsonify(bb)
+
+
 @app.route('/index', methods=['POST', 'GET'])
 def index():
     ######从数据库中读取5条数据显示在首页
@@ -36,21 +60,19 @@ def index():
 
     print(post1)
 
-    return jsonify({'ok': True})
-
     return render_template(
         'index.html',
-        post1=post1,
-        post2=post2,
-        post3=post3,
-        post4=post4,
-        post5=post5,
-
-        link1="post/" + post1,
-        link2="post/" + post2,
-        link3="post/" + post3,
-        link4="post/" + post4,
-        link5="post/" + post5,
+        # post1=post1,
+        # post2=post2,
+        # post3=post3,
+        # post4=post4,
+        # post5=post5,
+        #
+        # link1="post/" + post1,
+        # link2="post/" + post2,
+        # link3="post/" + post3,
+        # link4="post/" + post4,
+        # link5="post/" + post5,
 
     )
 
