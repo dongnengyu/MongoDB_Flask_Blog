@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Start Bootstrap Theme</title>
+    <title>做只猫 - 记录生命</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -83,8 +83,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1 id="cleanBlog"> Clean Blog</h1>
-                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    <h1 id="cleanBlog"> 做只猫</h1>
+                    <span class="subheading">做只猫 - 记录生命</span>
                 </div>
             </div>
         </div>
@@ -97,84 +97,89 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-preview">
                 <a id="link1">
-                    <h2 class="post-title" id="post1">
+                    <h3 class="post-subtitle" id="post1">
 
-                    </h2>
-                    <h3 class="post-subtitle">
-                        Problems look mighty small from 150 miles up
                     </h3>
+                    <!--<h3 class="post-subtitle">-->
+                        <!--Problems look mighty small from 150 miles up-->
+                    <!--</h3>-->
                 </a>
-                <p class="post-meta">Posted by
+                <p class="post-meta" id="post1_date">Posted by
                     <a href="#">Start Bootstrap</a>
                     on September 24, 2018</p>
             </div>
             <hr>
             <div class="post-preview">
-                <a href={{link2}}>
-                    <h2 class="post-title">
-                        {{post2}}
-                    </h2>
+                <a id="link2">
+                    <h3 class="post-subtitle" id="post2">
+
+                    </h3>
                 </a>
-                <p class="post-meta">Posted by
+                <p class="post-meta" id="post2_date">Posted by
                     <a href="#">Start Bootstrap</a>
                     on September 18, 2018</p>
             </div>
             <hr>
             <div class="post-preview">
-            <a href={{link3}}>
-            <h2 class="post-title">
-            {{post3}}
-            </h2>
-            <h3 class="post-subtitle">
-            We predict too much for the next year and yet far too little for the next ten.
-            </h3>
-            </a>
-            <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on August 24, 2018</p>
+                <a id="link3">
+                    <h3 class="post-subtitle" id="post3">
+                        {{post3}}
+                    </h3>
+                    <!--<h3 class="post-subtitle">-->
+                        <!--We predict too much for the next year and yet far too little for the next ten.-->
+                    <!--</h3>-->
+                </a>
+                <p class="post-meta" id="post3_date">Posted by
+                    <a href="#">Start Bootstrap</a>
+                    on August 24, 2018</p>
             </div>
             <hr>
             <div class="post-preview">
-            <a href={{link4}}>
-            <h2 class="post-title">
-            {{post4}}
-            </h2>
-            <h3 class="post-subtitle">
-            We predict too much for the next year and yet far too little for the next ten.
-            </h3>
-            </a>
-            <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on August 24, 2018</p>
+                <a id="link4">
+                    <h3 class="post-subtitle" id="post4">
+                        {{post4}}
+                    </h3>
+                    <!--<h3 class="post-subtitle">-->
+                        <!--We predict too much for the next year and yet far too little for the next ten.-->
+                    <!--</h3>-->
+                </a>
+                <p class="post-meta" id="post4_date">Posted by
+                    <a href="#">Start Bootstrap</a>
+                    on August 24, 2018</p>
             </div>
             <hr>
             <div class="post-preview">
-            <a href={{link5}}>
-            <h2 class="post-title">
-            {{post5}}
-            </h2>
-            <h3 class="post-subtitle">
-            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-            </h3>
-            </a>
-            <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on July 8, 2018</p>
+                <a id="link5">
+                    <h3 class="post-subtitle" id="post5">
+                        {{post5}}
+                    </h3>
+                    <!--<h3 class="post-subtitle">-->
+                        <!--Many say exploration is part of our destiny, but it’s actually our duty to future generations.-->
+                    <!--</h3>-->
+                </a>
+                <p class="post-meta" id="post5_date">Posted
+                    <a href="#">Start Bootstrap</a>
+                    on July 8, 2018</p>
             </div>
             <hr>
+
+            <div>
+                <a id="active_page"></a>
+                <a class="btn" id="page_navigation"></a>
+                <a class="btn" id="current_page"></a>
+                <!--<a class="btn btn-primary float-right" id="counts"></a>-->
+            </div>
             <!-- Pager -->
-            <div class="clearfix">
-                <a class="btn btn-primary float-right" href="#" onclick="loadPassage()">Older Posts &rarr;</a>
-            </div>
+            <!--<div class="clearfix">-->
+                <!--<a class="btn btn-primary float-right" href="#" onclick="loadPassage()">Older Posts &rarr;</a>-->
+            <!--</div>-->
         </div>
     </div>
 </div>
-<hr>
 
-<a id="active_page"></a>
-<a id="page_navigation"></a>
-<a id="current_page"></a>
-<a id="counts"></a>
+
+
+
 <hr>
 
 <!-- Footer -->
@@ -235,6 +240,28 @@
             success: function (data) {
                 $("#post1").html(data[2]['title']);
                 $("#link1").attr("href" , "/post/" + data[2]['title'])
+
+                $("#post2").html(data[3]['title']);
+                $("#link2").attr("href" , "/post/" + data[3]['title'])
+
+                $("#post3").html(data[4]['title']);
+                $("#link3").attr("href" , "/post/" + data[4]['title'])
+
+                $("#post4").html(data[5]['title']);
+                $("#link4").attr("href" , "/post/" + data[5]['title'])
+
+                $("#post5").html(data[6]['title']);
+                $("#link5").attr("href" , "/post/" + data[6]['title'])
+
+                $("#post1_date").html("Posted on " + data[2]['date'])
+                $("#post2_date").html("Posted on " + data[3]['date'])
+                $("#post3_date").html("Posted on " + data[4]['date'])
+                $("#post4_date").html("Posted on " + data[5]['date'])
+                $("#post5_date").html("Posted on " + data[6]['date'])
+
+
+
+
                 // $('#current_page').attr("value" , index)
                 // $('#counts').attr("value" , 38)
 
@@ -271,7 +298,7 @@
 
     $(document).ready(function () {
 
-        loadPassage(1);
+        loadPassage(0);
 
         //每页显示的数目
         var show_per_page = 5;

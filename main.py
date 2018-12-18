@@ -31,7 +31,7 @@ def getPassage():
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         db = myclient['fileDB']
 
-        a = db.posts.find({}, {'title': 1, 'content': 1, '_id': 0}).sort([("date", -1)]).skip(int(index)).limit(5)
+        a = db.posts.find({}, {'title': 1, 'content': 1, "date": 1 ,'_id': 0}).sort([("date", -1)]).skip(int(index)).limit(5)
         d = db.posts.find().count()
         print(d)
 
