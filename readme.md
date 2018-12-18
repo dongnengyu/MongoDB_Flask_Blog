@@ -8,9 +8,7 @@
 * 利用mongodb储存文章和文件（其中文件用gridfs储存）
 
 
-<img src="/readme_1.png" style="max-width:30%;">
-<img src="readme_1.png" style="max-width:30%;">
-![]()
+<img src="/readme_1.png" ,width="50%" , height="50%"">
 
 * 自适应电脑和手机平板
 
