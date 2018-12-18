@@ -7,7 +7,10 @@
 #### 2.项目特点
 * 利用mongodb储存文章和文件（其中文件用gridfs储存）
 
-![](readme_1.png)
+
+<img src="/readme_1.png" style="max-width:30%;">
+<img src="readme_1.png" style="max-width:30%;">
+![]()
 
 * 自适应电脑和手机平板
 
